@@ -52,6 +52,31 @@ Observed in live Instantly:
 | Replies / bounces / opens | — | 0 / 0 / 0 |
 | Campaigns in review scope | 20 expected active/paused | 20 present, all draft; 5 unrelated QA/legacy campaigns excluded |
 
+## 3. Prioritized next steps
+
+### Priority call
+
+**Sending readiness comes before lead-sourcing scale-up.** With 0 live sending accounts, all campaigns in draft, and no sender attachments, additional verified leads have no route to send. Increasing sourcing volume now would only grow inventory that cannot be used and would age past the 14-day verification-staleness rework threshold in the sourcing standard. Lead-sourcing work continues in parallel only as *reconciliation* (queue, source URLs, credits), not volume growth.
+
+### Track A — Sending readiness (blocking; do in order)
+
+| # | Action | Prerequisites | Live evidence the owner must verify before marking done |
+|---|---|---|---|
+| A1 | Re-provision/reconnect sending accounts in the Instantly workspace. Resolve the roster first: confirm legacy-west retirement (2026-09-10) and helio onboarding (2026-09-13) with the mailbox/DNS owner before creating anything. | Domain/DNS ownership confirmed; workspace admin access; migration roster finalized | `LIST_ACCOUNTS` (unfiltered) returns each expected account with `status=1` (Active) and a defined `daily_limit`; legacy-west absent; helio present if onboarding confirmed. Account count and caps reconcile against `sender-operating-rules-2026-09-05.csv` |
+| A2 | Attach accounts to campaigns per segment rules (max 2 campaigns per sender; segment restrictions; no weekend senders on weekday-only campaigns). | A1 complete; segment-to-sender matrix approved against operating rules | `GET_CAMPAIGN` per campaign shows a non-empty account/`email_list` attachment; per-account mappings (`GET_ACCOUNT_CAMPAIGN_MAPPINGS`) show no sender on more than 2 campaigns |
+| A3 | Launch campaigns (exit draft) in family order, starting with the smallest caps (Health/HR, then Security/Finance, then volume segments) to limit ramp risk. Respect weekday-only schedule windows. | A2 complete; leads present in the campaign (Helio and Prism currently have 0 — decide populate vs defer); schedule dates current | `GET_CAMPAIGN_SENDING_STATUS` no longer reports `campaign_draft`; `last_healthy_send_at` becomes non-null; first send events appear in the activity listing and campaign analytics |
+| A4 | Re-baseline capacity from live settings, replacing the 495/day planning figure and the 80% usable assumption with observed values. | A1–A3 complete; at least one full sending day elapsed | Sum of live per-account `daily_limit` values; observed sends/day from analytics after ≥1 sending day; updated figure labeled as observed, not assumed |
+
+### Track B — Lead sourcing reconciliation (parallel, in this order)
+
+| # | Action | Prerequisites | Live evidence the owner must verify |
+|---|---|---|---|
+| B1 | Establish the verifier **credit balance** first — it gates whether any verification/enrichment can run at all. Current state is *unknown*, not zero. | Access to the verifier workspace (operator-held, per the sourcing standard) | An authoritative balance readout/export from the verifier workspace, dated, attached to this repo or referenced by location |
+| B2 | Triage the **96-record manual-review queue** (regulated Health/Finance title/market review; accept-all tagging). Re-verify any record whose verification is older than 14 days before clearing it. | B1 confirms sufficient credits for re-verification | Live queue count from the verifier workspace reconciles with the 96 figure (or replaces it as the corrected count); cleared records show `valid`/`accept_all` results within 14 days |
+| B3 | Resolve the **41 records missing a source URL**: backfill the URL, or apply the partner-referral bypass with reviewer initials, or disqualify the record. Records without a source URL are ineligible for upload. | B2 triage started (URL-less records surface during review); reviewer available for bypass sign-off | Each of the 41 records ends in one of three auditable states: URL backfilled, documented referral bypass, or disqualified; none uploaded without one |
+
+Sequencing rationale: credits (B1) determine whether the queue can be worked at all; queue triage (B2) clears the largest block of near-eligible leads and is where URL gaps surface; URL resolution (B3) is the final eligibility gate before any upload. Only after Track A reaches A3 should sourcing volume scale toward the 620/520/485 daily targets.
+
 ## Limitations
 
 - Analytics are workspace-reported zeros; draft diagnostics corroborate, but historical activity outside the window was not audited beyond the Prism legacy probe.
