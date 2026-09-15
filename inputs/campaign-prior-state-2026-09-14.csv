@@ -1,0 +1,21 @@
+campaign_id,campaign_name,prior_lifecycle,expected_sender_aliases,prior_issue
+2eeaaf57-0fb7-466f-b6dc-88a4ab288d08,Northstar SaaS Wave 01,active,sender-01|sender-03,attachment export missing
+b78290fb-2654-4729-9d40-cba1d0292bee,Northstar SaaS Wave 02,active,sender-02|sender-03,cap may be stale
+3f73a9ba-4e87-4b81-9c74-0099303b880c,Orbit Data Wave 01,active,sender-01|sender-02,verify source throughput
+ e8906d0c-ab9b-408a-8f71-bcd1fbc5aa2b,Orbit Data Wave 02,paused,sender-02,hold correction pending
+c3a5c7bb-bd88-4108-b55e-90f4a7d89ebf,Atlas Finance Wave 01,active,sender-07,manual review flag
+a7a474a-fcbc-4a7e-92b2-ba91a334a02f,Atlas Finance Wave 02,draft,sender-07,missing sender cross-link
+cf7d94d3-b73a-451e-81e8-0d0f840aadbe,Ember Security Wave 01,active,sender-07|sender-10,warmup check
+5ae99662-450a-4b5e-bf15-a75283f8cac7,Ember Security Wave 02,paused,sender-10,prior cap discrepancy
+084c2989-cb93-4b85-b474-9a40d278e908,Meridian Health Wave 01,active,sender-08,regulated review
+caf37bdc-7a72-49d9-8e47-7a6160202213,Meridian Health Wave 02,draft,sender-08,missing sender cross-link
+5192e1f3-85aa-4198-a053-fdc3c77e546c,Lumen HR Wave 01,paused,sender-09,expected DNS hold
+20cd9fcb-fc23-4916-b265-7d94c8d235db,Lumen HR Wave 02,active,sender-08|sender-09,verify pause state
+ee04ae61-0d43-4acd-adcd-f643d12bb11d,Vale Manufacturing Wave 01,active,sender-04,weekday schedule
+8d5e61fe-0193-4d3b-913c-d93b3d4af05e,Vale Manufacturing Wave 02,active,sender-04|sender-06,attachment export missing
+c1ef04ce-feaf-4bf7-81d7-bd96293b6143,Canyon Logistics Wave 01,active,sender-05,weekday schedule
+c10da5e3-4fcf-48f9-88f1-0862f80a1ba6,Canyon Logistics Wave 02,paused,sender-05|sender-06,prior cap discrepancy
+24b0b39c-7a8d-4f13-a737-ef7ba7882d8f,Harbor Retail Wave 01,active,sender-06,weekday schedule
+c8e617b0-ef50-4280-8dbd-90581ddc52f8,Harbor Retail Wave 02,draft,sender-04|sender-06,missing sender cross-link
+adf80b8d-c8b6-4e9b-b875-1e6e0c62c6b6,Prism Analytics Wave 02,completed,sender-10,legacy activity expected
+5c316e24-622b-4e92-b375-8e1864cf27c8,Helio Systems Wave 01,draft,sender-11,new sender not confirmed

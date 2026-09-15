@@ -1,0 +1,13 @@
+sender_alias,expected_email,expected_state,planned_daily_cap,warmup_floor,allowed_segments,last_reviewed,notes
+sender-01,atlas@outreach.example,active,45,18,SaaS|Data,2026-09-05,Two campaign maximum
+sender-02,orbit@outreach.example,active,45,18,SaaS|Data,2026-09-05,Two campaign maximum
+sender-03,northstar@outreach.example,active,45,18,SaaS|Data,2026-09-05,Two campaign maximum
+sender-04,vale@outreach.example,active,40,16,Manufacturing|Logistics|Retail,2026-09-05,Do not send weekends
+sender-05,canyon@outreach.example,active,40,16,Manufacturing|Logistics|Retail,2026-09-05,Do not send weekends
+sender-06,harbor@outreach.example,active,40,16,Manufacturing|Logistics|Retail,2026-09-05,Do not send weekends
+sender-07,ember@outreach.example,active,35,15,Security|Finance,2026-09-05,Manual reply review
+sender-08,meridian@outreach.example,active,25,12,Health|HR,2026-09-05,Regulated segment guard
+sender-09,lumen@outreach.example,paused,25,12,Health|HR,2026-09-05,Paused pending DNS check
+sender-10,prism@outreach.example,active,35,15,Security|Finance,2026-09-05,New domain ramp
+sender-11,helio@outreach.example,active,32,14,SaaS|Data,2026-09-05,Migration roster entry
+sender-12,legacy-west@outreach.example,active,30,14,All,2026-08-22,Legacy entry; verify live
