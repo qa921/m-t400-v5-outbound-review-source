@@ -1,0 +1,2 @@
+activity_id,message_id,campaign_id,campaign_name,lead_email,event_type,timestamp_utc,dedupe_key,notes
+# REVIEW WINDOW 2026-09-09..2026-09-15 UTC: zero activity events observed in live Instantly workspace (emails list empty across unfiltered, sent-type, and per-campaign probes; per-campaign analytics all zero). Dedupe rule per correction-queue item 6 (stable activity/message ID + campaign ID) found no rows to apply to; no exceptions with absent stable IDs.
