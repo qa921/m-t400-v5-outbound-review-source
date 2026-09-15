@@ -2,9 +2,9 @@ campaign_id,campaign_name,prior_lifecycle,expected_sender_aliases,prior_issue
 2eeaaf57-0fb7-466f-b6dc-88a4ab288d08,Northstar SaaS Wave 01,active,sender-01|sender-03,attachment export missing
 b78290fb-2654-4729-9d40-cba1d0292bee,Northstar SaaS Wave 02,active,sender-02|sender-03,cap may be stale
 3f73a9ba-4e87-4b81-9c74-0099303b880c,Orbit Data Wave 01,active,sender-01|sender-02,verify source throughput
- e8906d0c-ab9b-408a-8f71-bcd1fbc5aa2b,Orbit Data Wave 02,paused,sender-02,hold correction pending
+e8906d0c-ab9b-408a-8f71-bcd1fbc5aa2b,Orbit Data Wave 02,paused,sender-02,hold correction pending
 c3a5c7bb-bd88-4108-b55e-90f4a7d89ebf,Atlas Finance Wave 01,active,sender-07,manual review flag
-a7a474a-fcbc-4a7e-92b2-ba91a334a02f,Atlas Finance Wave 02,draft,sender-07,missing sender cross-link
+0a7a474a-fcbc-4a7e-92b2-ba91a334a02f,Atlas Finance Wave 02,draft,sender-07,missing sender cross-link
 cf7d94d3-b73a-451e-81e8-0d0f840aadbe,Ember Security Wave 01,active,sender-07|sender-10,warmup check
 5ae99662-450a-4b5e-bf15-a75283f8cac7,Ember Security Wave 02,paused,sender-10,prior cap discrepancy
 084c2989-cb93-4b85-b474-9a40d278e908,Meridian Health Wave 01,active,sender-08,regulated review
